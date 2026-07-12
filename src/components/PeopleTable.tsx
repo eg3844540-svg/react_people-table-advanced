@@ -13,11 +13,7 @@ type Props = {
 
 type SortField = 'name' | 'sex' | 'born' | 'died';
 
-export const PeopleTable = ({
-  people,
-  allPeople,
-  selectedSlug,
-}: Props) => {
+export const PeopleTable = ({ people, allPeople, selectedSlug }: Props) => {
   const [searchParams] = useSearchParams();
 
   const sort = searchParams.get('sort');
@@ -49,9 +45,7 @@ export const PeopleTable = ({
       return 'fas fa-sort';
     }
 
-    return order === 'desc'
-      ? 'fas fa-sort-down'
-      : 'fas fa-sort-up';
+    return order === 'desc' ? 'fas fa-sort-down' : 'fas fa-sort-up';
   };
 
   const findPerson = (name: string | null) =>
